@@ -5,7 +5,8 @@ const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-
+const rideRoutes = require("./routes/rideRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 const app = express();
 
 // connect mongodb atls
@@ -24,6 +25,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/auth", authRoutes)
+app.use("/api/rides", rideRoutes)
+app.use("/api/bookings", bookingRoutes)
 
 //server listening
 
