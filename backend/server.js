@@ -1,16 +1,17 @@
 // backend server configuration
 
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-const connectDB = require("./config/db");
-const authRoutes = require("./routes/authRoutes");
-const rideRoutes = require("./routes/rideRoutes");
-const bookingRoutes = require("./routes/bookingRoutes");
+import express from 'express';
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
+import rideRoutes from "./routes/rideRoutes.js";
+import bookingRoutes from "./routes/bookingRoutes.js";
+import userRoutes from './routes/userRoutes.js';
 const app = express();
 
 // connect mongodb atls
-
+dotenv.config();
 connectDB()
 
 //Middleware setup
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes)
 app.use("/api/rides", rideRoutes)
 app.use("/api/bookings", bookingRoutes)
+app.use("/api/users", userRoutes)
 
 //server listening
 
