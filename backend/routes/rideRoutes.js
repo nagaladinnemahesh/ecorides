@@ -1,5 +1,5 @@
-const express = require("express");
-const {protect, authorizeRoles} = require("../middleware/authMiddleware");
+import express from "express";
+import {protect, authorizeRoles} from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -15,4 +15,4 @@ router.get("/", protect, (req, res) => {
     res.json({message: " Showing available Rides(dummy)"})
 });
 
-module.exports = router;
+export default router;
