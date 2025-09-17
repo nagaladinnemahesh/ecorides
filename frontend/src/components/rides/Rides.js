@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext.js";
 import "./rides.css";
 
 function Rides() {
@@ -30,7 +30,10 @@ function Rides() {
           setMessage(res.data.message || "No rides available");
         }
       } catch (err) {
-        console.error("Error fetching rides: ", err.response?.data || err.message);
+        console.error(
+          "Error fetching rides: ",
+          err.response?.data || err.message
+        );
         setMessage("Failed to fetch rides.");
       } finally {
         setLoading(false);
@@ -53,7 +56,7 @@ function Rides() {
           <button
             onClick={() => {
               localStorage.clear();
-              window.location.href = "/login";
+              window.location.href = "/homepage";
             }}
           >
             Logout
@@ -62,7 +65,12 @@ function Rides() {
       </header>
 
       {user?.role === "rider" && (
-        <button className="create-btn">+ Create Ride</button>
+        <button
+          className="create-btn"
+          onClick={() => (window.location.href = "/rides/create")}
+        >
+          + Create Ride
+        </button>
       )}
 
       {message && <p className="rides-message">{message}</p>}

@@ -1,0 +1,89 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+  color: #333;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.homepage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a7de1;
+  color: white;
+  padding: 20px 40px;
+}
+
+.homepage-header h1 {
+  font-size: 28px;
+}
+
+.homepage-nav .nav-btn {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: white;
+  color: #2a7de1;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.homepage-nav .nav-btn:hover {
+  background: #1a5bb8;
+  color: white;
+}
+
+.homepage-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background: white;
+}
+
+.intro-text {
+  max-width: 500px;
+}
+
+.intro-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #2a7de1;
+}
+
+.intro-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #06d6a0;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.explore-btn:hover {
+  background: #04b385;
+}
+
+.intro-image img {
+  width: 500px;
+  border-radius: 12px;
+}
+
+.homepage-footer {
+  background: #2a7de1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
