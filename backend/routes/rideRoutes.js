@@ -1,15 +1,10 @@
-<<<<<<< Updated upstream
-const express = require("express");
-const {protect, authorizeRoles} = require("../middleware/authMiddleware");
-=======
 import express from "express";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
 import { getAvailableRides } from "../controllers/rideController.js";
->>>>>>> Stashed changes
+import Ride from "../models/Ride.js";
 
 const router = express.Router();
 
-// Rider only - create ride
 router.post("/create", protect, authorizeRoles("rider"), async (req, res) => {
     const { origin, destination, date, seatsAvailable, price } = req.body;
 
@@ -29,11 +24,6 @@ router.post("/create", protect, authorizeRoles("rider"), async (req, res) => {
     }
 });
 
-<<<<<<< Updated upstream
-module.exports = router;
-=======
-// Shared view: View all available rides (real data)
 router.get("/", protect, getAvailableRides);
 
 export default router;
->>>>>>> Stashed changes

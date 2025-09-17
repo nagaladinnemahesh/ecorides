@@ -1,6 +1,5 @@
 // models/Ride.js
 import mongoose from "mongoose";
-
 const rideSchema = new mongoose.Schema(
   {
     driver: {

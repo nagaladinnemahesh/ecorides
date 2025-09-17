@@ -1,6 +1,6 @@
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import User from "../models/User.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 // Register new user
 
@@ -83,4 +83,4 @@ const generateToken = (id) => {
     });
 };
 
-module.exports = {registerUser, loginUser};
+export {registerUser, loginUser};
